@@ -227,6 +227,118 @@ const InputSubLabel = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.d
 
 /***/ }),
 
+/***/ "./components/Layout/index.js":
+/*!************************************!*\
+  !*** ./components/Layout/index.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../routes */ "./routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/home/roland/repos/learn2spell-app/components/Layout/index.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+ // import Menu from "../../components/Menu";
+// import { Body } from "../../components/Text";
+
+
+const Header = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  background: grey;
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+`;
+const Logo = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.a`
+  background: black;
+  flex: 0 0 auto;
+  line-height: 50px;
+  display: block;
+  font-weight: bold;
+  padding: 0 20px;
+  text-decoration: none;
+  border-right: 10px solid yellow;
+  color: white;
+  font-family: Times New Roman;
+  letter-spacing: 1px;
+  font-weight: 600;
+  :visited {
+    color: white;
+  }
+  :active {
+    color: white;
+  }
+  :hover {
+    color: yellow;
+  }
+`;
+const ContentContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  min-height: 100%;
+  background: yellow;
+`; // const Content = styled.div`
+//   height: 100%;
+//   background: red;
+// `;
+// const Footer = styled.div`
+//   flex-shrink: 0;
+//   background: ${({ theme }) => theme.color.grey.toString()};
+//   color: ${({ theme }) => theme.color.grey.darken(0.5).toString()};
+//   height: 30px;
+//   line-height: 30px;
+//   display: flex;
+//   justify-content: space-between;
+// `;
+// const FooterLinks = styled.div`
+//   display: flex;
+// `;
+
+/* harmony default export */ __webpack_exports__["default"] = (({
+  children,
+  auth,
+  user
+}) => {
+  if (auth === null) {}
+
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69
+    },
+    __self: undefined
+  }, __jsx(Header, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70
+    },
+    __self: undefined
+  }, __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72
+    },
+    __self: undefined
+  }, "learn2spell ")), __jsx(ContentContainer, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79
+    },
+    __self: undefined
+  }, children));
+});
+
+/***/ }),
+
 /***/ "./components/Link/index.js":
 /*!**********************************!*\
   !*** ./components/Link/index.js ***!
@@ -278,9 +390,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _components_Link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Link */ "./components/Link/index.js");
 /* harmony import */ var _components_Link__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_Link__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_Input__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Input */ "./components/Input/index.js");
-/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Button */ "./components/Button/index.js");
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../config */ "./config/index.js");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout/index.js");
+/* harmony import */ var _components_Input__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Input */ "./components/Input/index.js");
+/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Button */ "./components/Button/index.js");
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../config */ "./config/index.js");
 var _jsxFileName = "/home/roland/repos/learn2spell-app/pages/login.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -292,7 +405,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
- // import Layout from "../components/Layout";
+
 
 
  // import { Title, Body } from "../components/Text";
@@ -339,7 +452,7 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       });
       const tips = {};
       const response = await axios__WEBPACK_IMPORTED_MODULE_2___default()({
-        url: _config__WEBPACK_IMPORTED_MODULE_8__["default"].api.host + "/auth",
+        url: _config__WEBPACK_IMPORTED_MODULE_9__["default"].api.host + "/auth",
         method: "POST",
         data: {
           email,
@@ -412,118 +525,112 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       submitting,
       tips
     } = this.state;
-    return (//   <Layout auth={auth} user={user} isTouch={isTouch}>
-      //     <Head>
-      //       <title>Login - Jaresume</title>
-      //     </Head>
-      //     {isTouch && (
-      //       <TouchLogin
-      //         email={email}
-      //         password={password}
-      //         submitting={submitting}
-      //         tips={tips}
-      //         onChangeEmail={this.onChangeEmail}
-      //         onChangePassword={this.onChangePassword}
-      //         login={this.login}
-      //         onKeyDown={this.onKeyDown}
-      //       />
-      //     )}
-      //     {!isTouch && (
-      __jsx(LoginContainer, {
-        onKeyDown: this.onKeyDown,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 106
-        },
-        __self: this
-      }, __jsx("form", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 107
-        },
-        __self: this
-      }, __jsx("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 108
-        },
-        __self: this
-      }), __jsx("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 109
-        },
-        __self: this
-      }), __jsx("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 110
-        },
-        __self: this
-      }, "Login"), __jsx("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 112
-        },
-        __self: this
-      }), __jsx("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 113
-        },
-        __self: this
-      }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        label: "Email",
-        subLabel: tips.email,
-        type: "email",
-        onChange: this.onChangeEmail,
-        value: email,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 114
-        },
-        __self: this
-      }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        type: "password",
-        label: "Password",
-        subLabel: tips.password,
-        onChange: this.onChangePassword,
-        value: password,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 121
-        },
-        __self: this
-      }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        disabled: submitting,
-        onClick: this.login,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 128
-        },
-        __self: this
-      }, "Login")), __jsx("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 133
-        },
-        __self: this
-      }), __jsx("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 134
-        },
-        __self: this
-      }), __jsx("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 137
-        },
-        __self: this
-      })) //     )}
-      //   </Layout>
-
-    );
+    return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      auth: auth,
+      user: user,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 89
+      },
+      __self: this
+    }, __jsx("title", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 91
+      },
+      __self: this
+    }, "Login - Jaresume"), __jsx(LoginContainer, {
+      onKeyDown: this.onKeyDown,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 93
+      },
+      __self: this
+    }, __jsx("form", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 94
+      },
+      __self: this
+    }, __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 95
+      },
+      __self: this
+    }), __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 96
+      },
+      __self: this
+    }), __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 97
+      },
+      __self: this
+    }, "Login"), __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 99
+      },
+      __self: this
+    }), __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 100
+      },
+      __self: this
+    }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      label: "Email",
+      subLabel: tips.email,
+      type: "email",
+      onChange: this.onChangeEmail,
+      value: email,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 101
+      },
+      __self: this
+    }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      type: "password",
+      label: "Password",
+      subLabel: tips.password,
+      onChange: this.onChangePassword,
+      value: password,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 108
+      },
+      __self: this
+    }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      disabled: submitting,
+      onClick: this.login,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 115
+      },
+      __self: this
+    }, "Login")), __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 120
+      },
+      __self: this
+    }), __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 121
+      },
+      __self: this
+    }), __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 124
+      },
+      __self: this
+    })));
   }
 
 }

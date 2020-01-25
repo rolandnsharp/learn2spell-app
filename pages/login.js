@@ -5,7 +5,7 @@ import Head from "next/head";
 
 import { Router } from "../routes";
 import { Link } from "../components/Link";
-// import Layout from "../components/Layout";
+import Layout from "../components/Layout";
 import Input from "../components/Input";
 import Button from "../components/Button";
 // import { Title, Body } from "../components/Text";
@@ -86,23 +86,10 @@ export default class Signup extends Component {
 
     const { email, password, submitting, tips } = this.state;
     return (
-    //   <Layout auth={auth} user={user} isTouch={isTouch}>
-    //     <Head>
-    //       <title>Login - Jaresume</title>
-    //     </Head>
-    //     {isTouch && (
-    //       <TouchLogin
-    //         email={email}
-    //         password={password}
-    //         submitting={submitting}
-    //         tips={tips}
-    //         onChangeEmail={this.onChangeEmail}
-    //         onChangePassword={this.onChangePassword}
-    //         login={this.login}
-    //         onKeyDown={this.onKeyDown}
-    //       />
-    //     )}
-    //     {!isTouch && (
+      <Layout auth={auth} user={user}>
+         {/* <Head> */}
+           <title>Login - Jaresume</title>
+         {/* </Head> */}
           <LoginContainer onKeyDown={this.onKeyDown}>
             <form>
               <br />
@@ -138,8 +125,7 @@ export default class Signup extends Component {
               {/* Forgot your password? <Link to="forgot_password">reset</Link> */}
             </p>
           </LoginContainer>
-    //     )}
-    //   </Layout>
+      </Layout>
     );
   }
 }
