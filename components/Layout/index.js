@@ -1,5 +1,5 @@
 import styled from "styled-components";
-// import Menu from "../../components/Menu";
+import Menu from "../../components/Menu";
 // import { Body } from "../../components/Text";
 import { Link } from "../../routes";
 const Header = styled.div`
@@ -73,7 +73,7 @@ export default ({ children, auth, user }) => {
           {/* <Logo>learn2spell </Logo> */}
         {/* </Link> */}
 
-        {/* <Menu auth={auth} user={user} /> */}
+        <Menu auth={auth} user={user} />
       
       </Header>
       <ContentContainer>

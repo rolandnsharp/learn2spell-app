@@ -240,13 +240,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../routes */ "./routes.js");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Menu */ "./components/Menu/index.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../routes */ "./routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/home/roland/repos/learn2spell-app/components/Layout/index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
- // import Menu from "../../components/Menu";
-// import { Body } from "../../components/Text";
+
+ // import { Body } from "../../components/Text";
 
 
 const Header = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
@@ -328,7 +329,15 @@ const ContentContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.
       lineNumber: 72
     },
     __self: undefined
-  }, "learn2spell ")), __jsx(ContentContainer, {
+  }, "learn2spell "), __jsx(_components_Menu__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    auth: auth,
+    user: user,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 76
+    },
+    __self: undefined
+  })), __jsx(ContentContainer, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 79
@@ -409,6 +418,134 @@ const Link = props => {
     __self: undefined
   }, props.children));
 };
+
+/***/ }),
+
+/***/ "./components/Menu/index.js":
+/*!**********************************!*\
+  !*** ./components/Menu/index.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../routes */ "./routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/home/roland/repos/learn2spell-app/components/Menu/index.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+const Menu = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
+  display: flex;
+  line-height: 50px;
+  width: 600px;
+  align-content: flex-start;
+  margin-right: 20px;
+  justify-content: flex-end;
+`;
+const MenuItem = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.a`
+  color: blue;
+  font-size: 18px;
+  flex: 0 0 auto;
+  text-decoration: none;
+  justify-content: space-around;
+  margin: 0 10px;
+  color: black;
+  :hover {
+    color: black;
+  }
+`;
+const Logo = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div``;
+/* harmony default export */ __webpack_exports__["default"] = (props => {
+  const {
+    auth,
+    user
+  } = props;
+
+  if (auth) {
+    return __jsx(Menu, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30
+      },
+      __self: undefined
+    }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      prefetch: true,
+      route: "settings",
+      passHref: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 32
+      },
+      __self: undefined
+    }, __jsx(MenuItem, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 33
+      },
+      __self: undefined
+    }, "Settings")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      prefetch: true,
+      route: "logout",
+      passHref: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 35
+      },
+      __self: undefined
+    }, __jsx(MenuItem, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 36
+      },
+      __self: undefined
+    }, "Logout")));
+  } else {
+    return __jsx(Menu, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 42
+      },
+      __self: undefined
+    }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      prefetch: true,
+      route: "login",
+      passHref: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 43
+      },
+      __self: undefined
+    }, __jsx(MenuItem, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 44
+      },
+      __self: undefined
+    }, "Login")), __jsx(_routes__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      prefetch: true,
+      route: "signup",
+      passHref: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 46
+      },
+      __self: undefined
+    }, __jsx(MenuItem, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 47
+      },
+      __self: undefined
+    }, "Signup")));
+  }
+});
 
 /***/ }),
 
