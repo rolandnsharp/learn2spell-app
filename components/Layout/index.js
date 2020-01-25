@@ -22,20 +22,10 @@ const Logo = styled.a`
   font-weight: bold;
   padding: 0 20px;
   text-decoration: none;
-  border-right: 10px solid yellow;
   color: white;
   font-family: Times New Roman;
   letter-spacing: 1px;
   font-weight: 600;
-  :visited {
-    color: white;
-  }
-  :active {
-    color: white;
-  }
-  :hover {
-    color: yellow;
-  }
 `;
 
 const ContentContainer = styled.div`
@@ -68,10 +58,9 @@ export default ({ children, auth, user }) => {
   return (
     <div>
       <Header>
-        {/* <Link href="/" passHref> */}
-          <p>learn2spell </p>
-          {/* <Logo>learn2spell </Logo> */}
-        {/* </Link> */}
+        <Link href="/" passHref>
+          <Logo>learn2spell </Logo>
+        </Link>
 
         <Menu auth={auth} user={user} />
       

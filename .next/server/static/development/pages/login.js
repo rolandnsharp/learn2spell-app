@@ -240,7 +240,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Menu */ "./components/Menu/index.js");
+/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Menu */ "./components/Menu/index.js");
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../routes */ "./routes.js");
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/home/roland/repos/learn2spell-app/components/Layout/index.js";
@@ -269,20 +269,10 @@ const Logo = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.a`
   font-weight: bold;
   padding: 0 20px;
   text-decoration: none;
-  border-right: 10px solid yellow;
   color: white;
   font-family: Times New Roman;
   letter-spacing: 1px;
   font-weight: 600;
-  :visited {
-    color: white;
-  }
-  :active {
-    color: white;
-  }
-  :hover {
-    color: yellow;
-  }
 `;
 const ContentContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
   min-height: 100%;
@@ -314,33 +304,41 @@ const ContentContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 59
     },
     __self: undefined
   }, __jsx(Header, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 60
     },
     __self: undefined
-  }, __jsx("p", {
+  }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+    href: "/",
+    passHref: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 61
     },
     __self: undefined
-  }, "learn2spell "), __jsx(_components_Menu__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, __jsx(Logo, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62
+    },
+    __self: undefined
+  }, "learn2spell ")), __jsx(_components_Menu__WEBPACK_IMPORTED_MODULE_2__["default"], {
     auth: auth,
     user: user,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 65
     },
     __self: undefined
   })), __jsx(ContentContainer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 68
     },
     __self: undefined
   }, children));

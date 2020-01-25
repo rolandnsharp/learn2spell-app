@@ -165,7 +165,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/Menu */ "./components/Menu/index.js");
+/* harmony import */ var _components_Menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Menu */ "./components/Menu/index.js");
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../routes */ "./routes.js");
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_4__);
 
@@ -184,7 +184,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  background: black;\n  flex: 0 0 auto;\n  line-height: 50px;\n  display: block;\n  font-weight: bold;\n  padding: 0 20px;\n  text-decoration: none;\n  border-right: 10px solid yellow;\n  color: white;\n  font-family: Times New Roman;\n  letter-spacing: 1px;\n  font-weight: 600;\n  :visited {\n    color: white;\n  }\n  :active {\n    color: white;\n  }\n  :hover {\n    color: yellow;\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  background: black;\n  flex: 0 0 auto;\n  line-height: 50px;\n  display: block;\n  font-weight: bold;\n  padding: 0 20px;\n  text-decoration: none;\n  color: white;\n  font-family: Times New Roman;\n  letter-spacing: 1px;\n  font-weight: 600;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -236,33 +236,41 @@ var ContentContainer = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"]
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 59
     },
     __self: this
   }, __jsx(Header, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 60
     },
     __self: this
-  }, __jsx("p", {
+  }, __jsx(_routes__WEBPACK_IMPORTED_MODULE_4__["Link"], {
+    href: "/",
+    passHref: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 61
     },
     __self: this
-  }, "learn2spell "), __jsx(_components_Menu__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, __jsx(Logo, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62
+    },
+    __self: this
+  }, "learn2spell ")), __jsx(_components_Menu__WEBPACK_IMPORTED_MODULE_3__["default"], {
     auth: auth,
     user: user,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 65
     },
     __self: this
   })), __jsx(ContentContainer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 68
     },
     __self: this
   }, children));

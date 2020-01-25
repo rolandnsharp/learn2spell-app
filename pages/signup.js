@@ -186,7 +186,7 @@ export default class Signup extends Component {
               </Button>
               <br />
               <Body>
-                Already have an account? <Link href="/login">login</Link>
+                {/* Already have an account? <Link href="/login">login</Link> */}
               </Body>
             </div>
           )}
