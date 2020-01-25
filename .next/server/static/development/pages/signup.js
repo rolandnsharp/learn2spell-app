@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -412,6 +412,77 @@ const Link = props => {
 
 /***/ }),
 
+/***/ "./components/Text/index.js":
+/*!**********************************!*\
+  !*** ./components/Text/index.js ***!
+  \**********************************/
+/*! exports provided: Title, SubTitle, Body */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Title", function() { return Title; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SubTitle", function() { return SubTitle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Body", function() { return Body; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/home/roland/repos/learn2spell-app/components/Text/index.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+const TitleText = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  letter-spacing: -0.01em;
+`;
+const Title = props => {
+  const {
+    children
+  } = props;
+  return __jsx(TitleText, _extends({}, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
+  }), children);
+};
+const SubTitleText = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  font-weight: 600;
+`;
+const SubTitle = props => {
+  const {
+    children
+  } = props;
+  return __jsx(SubTitleText, _extends({}, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: undefined
+  }), children);
+};
+const BodyText = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  letter-spacing: -0.009em;
+`;
+const Body = props => {
+  const {
+    children
+  } = props;
+  return __jsx(BodyText, _extends({}, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: undefined
+  }), children);
+};
+
+/***/ }),
+
 /***/ "./config/index.js":
 /*!*************************!*\
   !*** ./config/index.js ***!
@@ -430,15 +501,16 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./pages/login.js":
-/*!************************!*\
-  !*** ./pages/login.js ***!
-  \************************/
-/*! exports provided: default */
+/***/ "./pages/signup.js":
+/*!*************************!*\
+  !*** ./pages/signup.js ***!
+  \*************************/
+/*! exports provided: isValidUsername, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isValidUsername", function() { return isValidUsername; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Signup; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -446,16 +518,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/head */ "next/head");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../routes */ "./routes.js");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _components_Link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Link */ "./components/Link/index.js");
-/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout/index.js");
-/* harmony import */ var _components_Input__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Input */ "./components/Input/index.js");
-/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Button */ "./components/Button/index.js");
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../config */ "./config/index.js");
-var _jsxFileName = "/home/roland/repos/learn2spell-app/pages/login.js";
+/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash/debounce */ "lodash/debounce");
+/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash_debounce__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../config */ "./config/index.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../routes */ "./routes.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_routes__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _components_Link__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Link */ "./components/Link/index.js");
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout/index.js");
+/* harmony import */ var _components_Input__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Input */ "./components/Input/index.js");
+/* harmony import */ var _components_Button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/Button */ "./components/Button/index.js");
+/* harmony import */ var _components_Text__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/Text */ "./components/Text/index.js");
+var _jsxFileName = "/home/roland/repos/learn2spell-app/pages/signup.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -469,14 +544,41 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
- // import { Title, Body } from "../components/Text";
 
- // import { TouchLogin } from "../components/Login";
 
-const LoginContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+
+
+
+function validateEmail(email) {
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+
+function isValidUsername(str) {
+  let code = null;
+
+  for (let i = 0, length = str.length; i < length; i++) {
+    code = str.charCodeAt(i);
+
+    if (!(code > 47 && code < 58) && // numeric 0-9
+    !(code > 64 && code < 91) && // upper alpha A-Z
+    !(code > 96 && code < 123) && // lower alpha a-z
+    !(code === 95)) {
+      // underscore _
+      return false;
+    }
+  }
+
+  return true;
+}
+const SignupContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
   margin: auto;
-  width: 500px;
-  padding-top: 80px;
+  width: ${({
+  isTouch
+}) => isTouch ? "100%" : "500px"};
+  padding: ${({
+  isTouch
+}) => isTouch ? "20px 20px 80px 20px" : "80px 0"};
 `;
 class Signup extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor(...args) {
@@ -486,87 +588,130 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       email: "",
       password: "",
       passwordVerification: "",
+      username: "",
+      submitted: false,
       submitting: false,
+      valid: false,
       tips: {}
     });
 
-    _defineProperty(this, "login", async () => {
+    _defineProperty(this, "signup", async () => {
+      console.log("try submit");
       const {
-        checkAuth,
-        submitting
-      } = this.props;
-      const {
+        valid,
         email,
-        password
+        password,
+        username
       } = this.state;
 
-      if (submitting) {
-        return false;
-      }
-
-      if (email.length === 0 && password.length === 0) {
+      if (!valid) {
         return false;
       }
 
       this.setState({
         submitting: true
       });
-      const tips = {};
       const response = await axios__WEBPACK_IMPORTED_MODULE_2___default()({
-        url: _config__WEBPACK_IMPORTED_MODULE_9__["default"].api.host + "/auth",
+        url: _config__WEBPACK_IMPORTED_MODULE_5__["default"].api.host + "/user",
         method: "POST",
         data: {
           email,
-          password
-        },
-        withCredentials: true
+          password,
+          username: username.toLowerCase()
+        }
       });
-      this.setState({
-        submitting: false
-      });
+      console.log(response.data);
 
-      if (!response.data.error) {
-        await checkAuth();
-        _routes__WEBPACK_IMPORTED_MODULE_4__["Router"].pushRoute("dashboard");
+      if (response.data.error) {
+        if (response.data.error === "email_exists") {
+          this.setState({
+            submitting: false,
+            valid: false,
+            tips: {
+              email: "This email is already taken =("
+            }
+          });
+        }
+
+        if (response.data.error === "username_exists") {
+          this.setState({
+            submitting: false,
+            valid: false,
+            tips: {
+              username: "This username is already taken =("
+            }
+          });
+        }
       } else {
-        if (response.data.error === "not_registered") {
-          tips.email = "Seems like you have the wrong email?";
-        }
+        this.setState({
+          submitted: true
+        });
+      }
+    });
 
-        if (response.data.error === "incorrect_password") {
-          tips.password = "You've got the password wrong";
-        }
+    _defineProperty(this, "checkValidity", () => {
+      const {
+        email,
+        username,
+        password
+      } = this.state;
+      console.log(Math.random());
+      console.log(validateEmail(email));
+      const tips = {};
 
-        if (response.data.error === "not_verified") {
-          tips.email = "Looks like you haven't confirmed your email...";
-        }
+      if (email.length > 0 && !validateEmail(email)) {
+        tips.email = "Not quite an email";
       }
 
+      if (username.length > 0 && !isValidUsername(username)) {
+        tips.username = "We only support letters, numbers and _";
+      }
+
+      if (password.length > 0 && password.length < 8) {
+        tips.password = "Use 8 characters at least";
+      }
+
+      const valid = Object.keys(tips).length === 0 && email.length > 0 && password.length > 0 && username.length > 0;
+      console.log(tips, valid);
       this.setState({
-        tips
+        tips,
+        valid
       });
-      console.log(response);
     });
 
     _defineProperty(this, "onChangeEmail", ev => {
       this.setState({
         email: ev.target.value
       });
+      this.validChecker();
+    });
+
+    _defineProperty(this, "onChangeUsername", ev => {
+      this.setState({
+        username: ev.target.value
+      });
+      this.validChecker();
     });
 
     _defineProperty(this, "onChangePassword", ev => {
       this.setState({
         password: ev.target.value
       });
+      this.validChecker();
     });
 
     _defineProperty(this, "onKeyDown", event => {
       if (event && event.key === "Enter") {
         event.preventDefault();
         event.stopPropagation();
-        this.login();
+        this.checkValidity();
+        setTimeout(this.signup, 100);
       }
     });
+  }
+
+  componentDidMount() {
+    this.validChecker = lodash_debounce__WEBPACK_IMPORTED_MODULE_3___default()(this.checkValidity, 1000);
   }
 
   render() {
@@ -575,123 +720,151 @@ class Signup extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       user,
       isTouch
     } = this.props;
-
-    if (auth) {
-      _routes__WEBPACK_IMPORTED_MODULE_4__["Router"].pushRoute("dashboard");
-    }
-
     const {
       email,
+      username,
       password,
-      submitting,
-      tips
+      submitted,
+      tips,
+      valid,
+      submitting
     } = this.state;
-    return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_6__["default"], {
+
+    if (auth) {
+      _routes__WEBPACK_IMPORTED_MODULE_6__["Router"].pushRoute("dashboard");
+    }
+
+    return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_8__["default"], {
       auth: auth,
       user: user,
+      isTouch: isTouch,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89
+        lineNumber: 148
+      },
+      __self: this
+    }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 149
       },
       __self: this
     }, __jsx("title", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91
+        lineNumber: 150
       },
       __self: this
-    }, "Login - Jaresume"), __jsx(LoginContainer, {
+    }, "Signup - Jaresume")), __jsx(SignupContainer, {
+      isTouch: isTouch,
       onKeyDown: this.onKeyDown,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93
+        lineNumber: 152
       },
       __self: this
-    }, __jsx("form", {
+    }, submitted && __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 94
+        lineNumber: 154
       },
       __self: this
-    }, __jsx("br", {
+    }, "Great work! Check your inbox to confirm your account."), !submitted && __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 95
+        lineNumber: 157
+      },
+      __self: this
+    }, " ", __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 159
       },
       __self: this
     }), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 96
+        lineNumber: 160
       },
       __self: this
-    }), __jsx("p", {
+    }), __jsx(_components_Text__WEBPACK_IMPORTED_MODULE_11__["Title"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 97
+        lineNumber: 161
       },
       __self: this
-    }, "Login"), __jsx("br", {
+    }, "Signup"), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99
+        lineNumber: 162
       },
       __self: this
     }), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 100
+        lineNumber: 163
       },
       __self: this
-    }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_9__["default"], {
       label: "Email",
       subLabel: tips.email,
-      type: "email",
+      type: "text",
       onChange: this.onChangeEmail,
       value: email,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 101
+        lineNumber: 164
       },
       __self: this
-    }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      type: "password",
+    }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      label: "Username",
+      subLabel: tips.username,
+      onChange: this.onChangeUsername,
+      value: username,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 171
+      },
+      __self: this
+    }), __jsx(_components_Input__WEBPACK_IMPORTED_MODULE_9__["default"], {
       label: "Password",
+      type: "password",
       subLabel: tips.password,
       onChange: this.onChangePassword,
       value: password,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 108
+        lineNumber: 177
       },
       __self: this
-    }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    }), __jsx(_components_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
       disabled: submitting,
-      onClick: this.login,
+      onClick: this.signup,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 115
+        lineNumber: 184
       },
       __self: this
-    }, "Login")), __jsx("br", {
+    }, "Signup"), __jsx("br", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 120
+        lineNumber: 187
       },
       __self: this
-    }), __jsx("p", {
+    }), __jsx(_components_Text__WEBPACK_IMPORTED_MODULE_11__["Body"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 121
+        lineNumber: 188
       },
       __self: this
-    }), __jsx("p", {
+    }, "Already have an account? ", __jsx(_components_Link__WEBPACK_IMPORTED_MODULE_7__["Link"], {
+      href: "/login",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 124
+        lineNumber: 189
       },
       __self: this
-    })));
+    }, "login")))));
   }
 
 }
@@ -722,14 +895,14 @@ module.exports = routes() //   .add("signup")
 
 /***/ }),
 
-/***/ 3:
-/*!******************************!*\
-  !*** multi ./pages/login.js ***!
-  \******************************/
+/***/ 4:
+/*!*******************************!*\
+  !*** multi ./pages/signup.js ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/roland/repos/learn2spell-app/pages/login.js */"./pages/login.js");
+module.exports = __webpack_require__(/*! /home/roland/repos/learn2spell-app/pages/signup.js */"./pages/signup.js");
 
 
 /***/ }),
@@ -753,6 +926,17 @@ module.exports = require("axios");
 /***/ (function(module, exports) {
 
 module.exports = require("color");
+
+/***/ }),
+
+/***/ "lodash/debounce":
+/*!**********************************!*\
+  !*** external "lodash/debounce" ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("lodash/debounce");
 
 /***/ }),
 
@@ -801,4 +985,4 @@ module.exports = require("styled-components");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=login.js.map
+//# sourceMappingURL=signup.js.map
