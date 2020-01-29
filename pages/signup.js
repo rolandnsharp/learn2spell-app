@@ -19,8 +19,8 @@ function validateEmail(email) {
 
 const SignupContainer = styled.div`
   margin: auto;
-  width: ${({ isTouch }) => (isTouch ? "100%" : "500px")};
-  padding: ${({ isTouch }) => (isTouch ? "20px 20px 80px 20px" : "80px 0")};
+  width: 500px;
+  padding: 80px;
 `;
 
 export default class Signup extends Component {
