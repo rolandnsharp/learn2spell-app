@@ -17,23 +17,6 @@ function validateEmail(email) {
   return re.test(String(email).toLowerCase());
 }
 
-export function isValidUsername(str) {
-  let code = null;
-  for (let i = 0, length = str.length; i < length; i++) {
-    code = str.charCodeAt(i);
-    if (
-      !(code > 47 && code < 58) && // numeric 0-9
-      !(code > 64 && code < 91) && // upper alpha A-Z
-      !(code > 96 && code < 123) && // lower alpha a-z
-      !(code === 95)
-    ) {
-      // underscore _
-      return false;
-    }
-  }
-  return true;
-}
-
 const SignupContainer = styled.div`
   margin: auto;
   width: ${({ isTouch }) => (isTouch ? "100%" : "500px")};
@@ -45,7 +28,6 @@ export default class Signup extends Component {
     email: "",
     password: "",
     passwordVerification: "",
-    username: "",
     submitted: false,
     submitting: false,
     valid: false,
@@ -56,7 +38,7 @@ export default class Signup extends Component {
   }
   signup = async () => {
     console.log("try submit");
-    const { valid, email, password, username } = this.state;
+    const { valid, email, password } = this.state;
     if (!valid) {
       return false;
     }
@@ -64,7 +46,7 @@ export default class Signup extends Component {
     const response = await axios({
       url: config.api.host + "/user",
       method: "POST",
-      data: { email, password, username: username.toLowerCase() }
+      data: { email, password }
     });
     console.log(response.data);
     if (response.data.error) {
@@ -75,27 +57,17 @@ export default class Signup extends Component {
           tips: { email: "This email is already taken =(" }
         });
       }
-      if (response.data.error === "username_exists") {
-        this.setState({
-          submitting: false,
-          valid: false,
-          tips: { username: "This username is already taken =(" }
-        });
-      }
     } else {
       this.setState({ submitted: true });
     }
   };
   checkValidity = () => {
-    const { email, username, password } = this.state;
+    const { email, password } = this.state;
     console.log(Math.random());
     console.log(validateEmail(email));
     const tips = {};
     if (email.length > 0 && !validateEmail(email)) {
       tips.email = "Not quite an email";
-    }
-    if (username.length > 0 && !isValidUsername(username)) {
-      tips.username = "We only support letters, numbers and _";
     }
     if (password.length > 0 && password.length < 8) {
       tips.password = "Use 8 characters at least";
@@ -103,17 +75,12 @@ export default class Signup extends Component {
     const valid =
       Object.keys(tips).length === 0 &&
       email.length > 0 &&
-      password.length > 0 &&
-      username.length > 0;
+      password.length > 0;
     console.log(tips, valid);
     this.setState({ tips, valid });
   };
   onChangeEmail = ev => {
     this.setState({ email: ev.target.value });
-    this.validChecker();
-  };
-  onChangeUsername = ev => {
-    this.setState({ username: ev.target.value });
     this.validChecker();
   };
   onChangePassword = ev => {
@@ -134,7 +101,6 @@ export default class Signup extends Component {
     const { auth, user, isTouch } = this.props;
     const {
       email,
-      username,
       password,
       submitted,
       tips,
@@ -145,11 +111,11 @@ export default class Signup extends Component {
       Router.pushRoute("dashboard");
     }
     return (
-      <Layout auth={auth} user={user} isTouch={isTouch}>
+      <Layout auth={auth} user={user}>
         <Head>
           <title>Signup - Jaresume</title>
         </Head>
-        <SignupContainer isTouch={isTouch} onKeyDown={this.onKeyDown}>
+        <SignupContainer onKeyDown={this.onKeyDown}>
           {submitted && (
             <div>Great work! Check your inbox to confirm your account.</div>
           )}
@@ -167,12 +133,6 @@ export default class Signup extends Component {
                 type="text"
                 onChange={this.onChangeEmail}
                 value={email}
-              />
-              <Input
-                label="Username"
-                subLabel={tips.username}
-                onChange={this.onChangeUsername}
-                value={username}
               />
               <Input
                 label="Password"
